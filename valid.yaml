@@ -1,0 +1,18 @@
+kind: Task
+spec:
+  workspaces:
+  - name: ws
+    mountPath: /workspaces/ws
+  steps:
+  - name: edit-files-1
+    workspaces:
+    - name: ws
+      mountPath: /foo # overrides mountPath
+  - name: edit-files-2
+    workspaces:
+    - name: ws # no mountPath specified so will use /workspaces/ws
+  sidecars:
+  - name: watch-files-on-workspace
+    workspaces:
+    - name: ws
+      mountPath: /files # overrides mountPath
