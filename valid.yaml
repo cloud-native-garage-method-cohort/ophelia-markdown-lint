@@ -1,3 +1,4 @@
+---
 kind: Task
 spec:
   workspaces:
@@ -7,12 +8,12 @@ spec:
   - name: edit-files-1
     workspaces:
     - name: ws
-      mountPath: /foo # overrides mountPath
+      mountPath: /foo
   - name: edit-files-2
     workspaces:
-    - name: ws # no mountPath specified so will use /workspaces/ws
+    - name: ws
   sidecars:
   - name: watch-files-on-workspace
     workspaces:
     - name: ws
-      mountPath: /files # overrides mountPath
+      mountPath: /files
