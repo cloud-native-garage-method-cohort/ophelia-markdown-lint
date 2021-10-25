@@ -8,4 +8,4 @@ spec:
     name: example-task
   workspaces:
     - name: myworkspace
-      emptyDir: {} 
+      emptyDir: {}
